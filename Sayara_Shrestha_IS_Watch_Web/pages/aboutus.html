@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Watch-store">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Danish Ansari">
+    <!--link to external css stylesheet-->
+    <link rel="stylesheet" href="/Development/css/style.css">
+    <!--Title of the webpage-->
+    <title>WATCH STORE | ETERNAL_TICKS</title>
+</head>
+    <body>
+        <!--logo-->
+    <nav>
+        <div class="headerrr">
+            <div class="mylogo">
+                <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="40%" width="40%" alt="logo">
+                <a href="" class="logo">ETERNAL_TICKS</a>
+            </div>
+           
+        </div>  
+       <!--navbar contains the items where users can navigate to other part of the websites-->
+        <ul class="links_nav" id="nav-links">
+            <li class="link"><a href="/Development/home.html">Home</a></li>
+            <li class="link"><a href="/Development/pages/product.html">Product</a></li>                   
+            <li class="link"><a href="/Development/pages/blog.html">Blog</a></li>           
+            <li class="link"><a href="/Development/pages/research.html">Research</a></li>                     
+            <li  class="link" ><a href="/Development/pages/aboutus.html">About Us</a></li>
+         
+        </ul>
+         <!--time-->    
+        <!--time and date-->
+        <div id="clock" class="clock"></div> <!-- Clock added here -->
+        <div id="date" class="clock"></div> <!-- Date added here-->     
+       
+        <!--body-->
+    </nav>
+        <!-- About Us Section (Team) -->
+        <main>
+            <section class="one">
+                <h2>Our Team</h2>
+                <P>Our team is a dynamic group of individuals with diverse skills and expertise, united by a shared commitment to achieving common goals.</P>
+                <div class="two">
+                    <!-- Member 1 -->
+                    <div class="three">
+                        <img src="/Development/img/PRAJESH.jpg" alt="Center image">
+                        <h2>Prajesh Sama Shrestha</h2>
+                        <h3> Group Leader</h3>
+                        <p>Meet Prajesh,our leader.He specializes in creating responsive and functional home page.</p>
+                        
+                        <a href="/Development/pages/prajesh.html"> Read More</a>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="three">
+                        <img src="/Development/img/sayara.jpg">
+                        <h2>Sayara Shrestha</h2>
+                        <h3>Project Manager</h3>
+                        <p>Say hello to Sayara,our co-leader. Her tasks involve writing blogs about technology and overseeing the project.</p>
+                       <a href="/Development/pages/sayara.html"> Read More</a>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="three">
+                        <img src="/Development/img/DANISH.jpg">
+                        <h2>Danish Ansari</h2>
+                        <h3>Content Writer </h3>
+                        <p>Meet Danish,he is in charge of creating each team member's portfolio and feedback form.</p>
+                       
+                        <a href="/Development/pages/danish.html"> Read More</a>
+                    </div>
+                    <!-- Member 4 -->
+                    <div class="three">
+                        <img src="/Development/img/sHreya.png">
+                       <h2>Shreya Lama</h2>
+                       <h3>Content Writer</h3>
+                       <p>Say hello to Shreya,she analyses product page and engaging contents. </p>
+                       <a href="/Development/pages/shreya.html">Read More</a>
+                    </div>
+                </div>
+            </section>
+    
+        
+          <!-- Contact Form Section -->
+         <div class="feedback-text"> Any feedbacks ? Let us know so we can improve it.</div>
+             <form id="contactForm" action="" onsubmit="return validateForm();">
+                 <label for="name"> Full Name:</label>
+                 <input type="text" id="name" name="name" required placeholder=" Enter Your full name here" maxlength="50">
+    
+                 <label for="email">Email:</label>
+                 <input type="email" id="email" name="email" required placeholder=" Enter Your email here" maxlength="50">
+    
+                 <label for="Phone">Phone:</label>
+                 <input type="tel" id="phone" name="phone" required placeholder=" Enter your phone number here" maxlength="10">
+    
+                 
+    
+                 <label for="message">Message:</label>
+                 <textarea id="message" name="message" rows="8" required placeholder="Leave us a message..."></textarea>
+    
+                 <button onclick="validateForm()">Submit</button>
+        </form>
+      
+            </section>
+        </main>
+
+<!--footerr-->
+
+     <footer class="footer" id="contact">
+        <div class="section_holder footer_holder">
+            <div class="fcol">
+                <div class="flogo">
+                    <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="10%" width="10%" alt="logo">
+                    <a href="#" class="logo">ETERNAL_TICKS</a>
+                </div>
+                <p>
+                    Jyatha, Kathmandu
+                </p>
+                <p>
+                    +977 9803611011
+                </p>
+                <!--social icons-->
+                <ul class="socials_">
+                    <li>
+                        <a href="#"><img src="/Development/img/facebook-new.png" height="30px" width="30px" alt="fbicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/instagram.png" height="30px" width="30px" alt="instaicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/pinterest-icon-2048x2048-2otqcxep.png" height="30px" width="30px" alt="pinteresticon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/tt.png" height="30px" width="30px" alt="tiktokicon"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Services</h4>
+                <!--footerlinks-->
+                <ul class="flinks">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Payrol</a></li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Resources</h4>
+                <ul class="flinks">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQS</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                   
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Support</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Feedback</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Feedback form</a></li>
+                    <li><a href="#">Feedback policy</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="footerbar_">
+            ETERNAL_TICKS//Watches That Define Your Style.
+        </div>
+     </footer>
+     <script>
+
+        function updateClock() {
+            const now = new Date();
+            
+            // Get time in 12-hour format
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // Convert hours to 12-hour format
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Ensure 12-hour format
+        
+            // Update time
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${period}`;
+        
+            // Update date
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Run updateClock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on page load
+        
+    </script>
+    <script src="/Development/js/script.js"></script>
+     
+    </body>
+</html>

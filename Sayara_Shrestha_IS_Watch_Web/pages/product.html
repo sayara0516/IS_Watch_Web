@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Watch-store">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Shreya Lama">
+    <!--link to external css stylesheet-->
+    <link rel="stylesheet" href="/Development/css/style.css">
+    <!--Title of the webpage-->
+    <title>WATCH STORE | ETERNAL_TICKS</title>
+    <style>
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .discounted-price {
+            color: #141414;
+            font-weight: bold;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+            color: rgb(14, 13, 13);
+        }
+
+        .popup p {
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #f29136;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        /*Product page css*/
+
+
+h2 .pro-title{
+    font-size: 46px;
+    line-height: 54px;
+    font-style: italic;
+}
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0 20px;
+    font-style: initial;
+}
+li {
+    font-size: 20px;
+}
+
+body {
+    width: 100%;
+}
+
+/*search button css*/
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 98%;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f4f2f2;
+    margin-right: 5px;
+    margin-bottom: auto;
+    width: 20%;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #161616;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #f5792c;
+}
+
+/*product images, box css*/
+.pro-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.pro-box {
+    width: 300px;
+    padding: 10px;
+    background-color: #d3d2d2;
+    text-align: center;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pro-box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.pro-box img:hover {
+    transform: scale(1.05);
+}
+
+.pro-details-row img:hover {
+    transform: scale(1.05);
+}
+
+.pro-box button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #111111;
+    background-color: #fffdfa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pro-box button:hover {
+    background-color: #f89924;
+}
+
+/*buttons css*/
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffa000;
+}
+
+.pro-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+    width: 100%;
+}
+
+.pro-detail-container img {
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.pro-details-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pro-details-row img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    margin-right: 50px;
+}
+
+.pro-title,
+.pro-price,
+.pro-detail-container,
+.pro-review,
+.quantity {
+    margin: 2px 0;
+}
+
+.pro-title {
+    line-height: normal;
+}
+
+/*back to product link css*/
+.back-link {
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+/*review section css*/
+.review-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+    <body>
+        <!--logo-->
+    <nav>
+        <div class="headerrr">
+            <div class="mylogo">
+                <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="40%" width="40%" alt="logo">
+                <a href="/Development/home.html" class="logo">ETERNAL_TICKS</a>
+            </div>
+           
+        </div>  
+       <!--navbar contains the items where users can navigate to other part of the websites-->
+        <ul class="links_nav" id="nav-links">
+            <li class="link"><a href="/Development/home.html">Home</a></li>
+            <li class="link"><a href="/Development/pages/product.html">Product</a></li>                   
+            <li class="link"><a href="/Development/pages/blog.html">Blog</a></li>           
+            <li class="link"><a href="/Development/pages/research.html">Research</a></li>                     
+            <li  class="link" ><a href="/Development/pages/aboutus.html">About Us</a></li>
+         
+        </ul>
+         <!--time-->    
+        <!--time and date-->
+        <div id="clock" class="clock"></div> <!-- Clock added here -->
+        <div id="date" class="clock"></div> <!-- Date added here-->     
+       
+        
+        <!--body-->
+    </nav>
+
+    <!--Search bar of product -->
+    <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button type="submit" onclick="searchWatch()">Search</button>
+    </div>
+    <div id="searchresults"></div>
+    <section class="product" id="Product">
+        <h1 style="text-align: center;font-weight: bold; font-size: 50px">Products</h1>
+
+        <!--Internal Script-->
+        <script>
+            function addtocart() {
+                const cartButton = document.querySelector('.addtocart');
+                const popup = document.getElementById('popup');
+
+                popup.style.display = 'block';
+            }
+            function closePopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+        </script>
+        <!--External JS-->
+        <script src="/Development/js/script.js"></script>
+
+        <!-- Product Container-->
+        <div class="pro-container">
+            <!--Product 1-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description1.html" id="watch-link">
+                    <!--product 1 image-->
+                    <img src="/Development/img/1.jpg" alt="watch1">
+                </a>
+                <h4 style="font-size: 20px;">Jaeger-LeCoultre Reverso</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$8,900</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.6/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description1.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+            <!--Popup for succefull add to cart-->
+            <div class="popup" id="popup">
+                <p>Successfully added to cart!</p>
+                <button onclick="closePopup()">Close</button>
+            </div>
+
+            <!-- Repeating Same Strcture to other products/images-->
+            <!--Product 2-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description2.html" id="watch-link">
+                    <!--product 2 image-->
+                    <img src="/Development/img/2.jpg" alt="watch2">
+                </a>
+                <h4 style="font-size: 20px;">Grand Seiko Sbge 285</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$8,900</p>
+                    <p class="discounted-price">$6,513</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.5/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description2.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 3-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description3.html" id="watch-link">
+                    <!--product 3 image-->
+                    <img src="/Development/img/3.jpg" alt="watch3">
+                </a>
+                <h4 style="font-size: 20px;">Seiko 5 Sports ssk003</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$475</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.7/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description3.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 4-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description4.html" id="watch-link">
+                    <!--product 4 image-->
+                    <img src="/Development/img/4.jpg" alt="watch4">
+                </a>
+                <h4 style="font-size: 20px;">Rolex Cosmograph Dayton</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$105,395</p>
+                    <p class="discounted-price">$21,079</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.7/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description4.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 5-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description5.html" id="watch-link">
+                    <!--product 5 image-->
+                    <img src="/Development/img/5.jpg" alt="watch5">
+                </a>
+                <h4 style="font-size: 20px;">Cartier Tank Louis</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$10,500</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.5/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description5.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 6-->
+            <div class="pro-box">
+                <!--product 6 image-->
+                <a>
+                    <img src="/Development/img/6.jpg" alt="watch6">
+                </a>
+                <h4 style="font-size: 20px;">Cartier Santos Dumont</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$6,500</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.6/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description6.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 7-->
+            <div class="pro-box">
+                <!--product 7 image-->
+                <a>
+                    <img src="/Development/img/7.jpg" alt="watch7">
+                </a>
+                <h4 style="font-size: 20px;">A.Lange amd Sohne 1815</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$25,000</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.8/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description7.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 8-->
+            <div class="pro-box">
+                <!--product 8 image-->
+                <a>
+                    <img src="/Development/img/23.jpg" alt="watch8">
+                </a>
+                <h4 style="font-size: 20px;">Snake Shape Bracelet Watch</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$8,934</p>
+                    <p class="discounted-price">$893.40</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.4/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description8.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 9-->
+            <div class="pro-box">
+                <!--product 9 image-->
+                <a>
+                    <img src="/Development/img/9.jpg" alt="watch9">
+                </a>
+                <h4 style="font-size: 20px;">Omega Speedmaster Moonwatch Professional</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$7,000</p>
+                    <p class="discounted-price">$1,189</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.7/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description9.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 10-->
+            <div class="pro-box">
+                <!--product 10 image-->
+                <a>
+                    <img src="/Development/img/10.jpg" alt="watch10">
+                </a>
+                <h4 style="font-size: 20px;">Tudor Pelagos Dive Watch</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$4,600</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.3/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description10.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 11-->
+            <div class="pro-box">
+                <!--product 11 image-->
+                <a>
+                    <img src="/Development/img/11.jpg" alt="watch11">
+                </a>
+                <h4 style="font-size: 20px;">Tudor Black bay chronometer</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$4,400</p>
+                    <p class="discounted-price">$748</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.4/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description11.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 12-->
+            <div class="pro-box">
+                <!--product 12 image-->
+                <a>
+                    <img src="/Development/img/12.jpg" alt="watch12">
+                </a>
+                <h4 style="font-size: 20px;">Vacheron constantin historique 222</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$32,000</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.6/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description12.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 13-->
+            <div class="pro-box">
+                <!--product 13 image-->
+                <a>
+                    <img src="/Development/img/15.jpg" alt="watch13">
+                </a>
+                <h4 style="font-size: 20px;">Apple Watch SE</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$200</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.8/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description13.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 14-->
+            <div class="pro-box">
+                <a href="/Development/pages/pro-description14.html" id="watch-link">
+                    <!--product 14 image-->
+                    <img src="/Development/img/Apple-Watch-UltraTitanium-Case-with-Alpine-Loop-Orange-a-4706.jpg" alt="watch14">
+                </a>
+                <h4 style="font-size: 20px;">Apple Watch Ultra</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$500</p>
+                    <p class="discounted-price">$75</p>
+
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.9/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description14.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+            <!--Product 15-->
+            <div class="pro-box">
+                <!--product 15 image-->
+                <a>
+                    <img src="/Development/img/17.jpg" alt="watch15">
+                </a>
+                <h4 style="font-size: 20px;">Panthère de Cartier watch</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="price">$32,200</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.7/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description15.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <!--Product 16-->
+            <div class="pro-box">
+                <!--product 16 image-->
+                <a>
+                    <img src="/Development/img/18.jpg" alt="watch16">
+                </a>
+                <h4 style="font-size: 20px;">Rolex Lady-Datejust</h4>
+                <!--price-container with original & disounted price-->
+                <div class="price-container">
+                    <p>Price:</p>
+                    <p class="original-price">$110,000</p>
+                    <p class="discounted-price">$16,500</p>
+                </div>
+                <!--ratings-section-->
+                <p class="ratings">Ratings: 4.9/5</p>
+                <!--Button of add to cart & description -->
+                <div class="button-container">
+                    <button class="description" onclick="location.href='pro-description16.html'">Description</button>
+                    <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                </div>
+            </div>
+    </section>
+ 
+    
+<!--footerr-->
+
+     <footer class="footer" id="contact">
+        <div class="section_holder footer_holder">
+            <div class="fcol">
+                <div class="flogo">
+                    <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="10%" width="10%" alt="logo">
+                    <a href="#" class="logo">ETERNAL_TICKS</a>
+                </div>
+                <p>
+                    Jyatha, Kathmandu
+                </p>
+                <p>
+                    +977 9803611011
+                </p>
+                <!--social icons-->
+                <ul class="socials_">
+                    <li>
+                        <a href="#"><img src="/Development/img/facebook-new.png" height="30px" width="30px" alt="fbicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/instagram.png" height="30px" width="30px" alt="instaicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/pinterest-icon-2048x2048-2otqcxep.png" height="30px" width="30px" alt="pinteresticon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/tt.png" height="30px" width="30px" alt="tiktokicon"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Services</h4>
+                <!--footerlinks-->
+                <ul class="flinks">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Payrol</a></li>
+                    
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Resources</h4>
+                <ul class="flinks">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQS</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Support</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                   
+            </div>
+            <div class="fcol">
+                <h4>Feedback</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Feedback form</a></li>
+                   
+            </div>
+        </div>
+        <div class="footerbar_">
+            ETERNAL_TICKS//Watches That Define Your Style.
+        </div>
+     </footer>
+    <script>
+
+        function updateClock() {
+            const now = new Date();
+            
+            // Get time in 12-hour format
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // Convert hours to 12-hour format
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Ensure 12-hour format
+        
+            // Update time
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${period}`;
+        
+            // Update date
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Run updateClock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on page load
+        
+    </script>
+     
+    </body>
+</html>

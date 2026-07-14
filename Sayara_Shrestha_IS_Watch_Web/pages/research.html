@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Research of Eternal Ticks">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Sayara Shrestha">
+    <!--link to external css stylesheet-->
+    <link rel="stylesheet" href="/Development/css/style.css">
+    <!--Title of the webpage-->
+    <title>WATCH STORE | ETERNAL_TICKS</title>
+</head>
+    <body>
+        <!--logo-->
+    <nav>
+        <div class="headerrr">
+            <div class="mylogo">
+                <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" alt="logo">
+                <a href="/Development/home.html" class="logo">ETERNAL_TICKS</a>
+            </div>
+           
+        </div>  
+       <!--navbar contains the items where users can navigate to other part of the websites-->
+        <ul class="links_nav" id="nav-links">
+          <li class="link"><a href="/Development/home.html">Home</a></li>
+          <li class="link"><a href="/Development/pages/product.html">Product</a></li>                   
+          <li class="link"><a href="/Development/pages/blog.html">Blog</a></li>           
+          <li class="link"><a href="/Development/pages/research.html">Research</a></li>                     
+          <li  class="link" ><a href="/Development/pages/aboutus.html">About Us</a></li>
+         
+        </ul>
+         <!--time-->    
+        <!--time and date-->
+        <div id="clock" class="clock"></div> <!-- Clock added here -->
+        <div id="date" class="clock"></div> <!-- Date added here-->     
+       
+        
+        <!--body-->
+    </nav>
+    <!-- Internal CSS starts -->
+     <style>
+        .mylogo{
+          max-width: 300px;
+          width: 40%;
+
+        }
+        .flogo{
+          max-width: 200px;
+          width: 25%;
+        }
+        
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        }
+        .research-box {
+         max-width: 1400px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color:black;
+         border-radius: 10px;
+         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+         text-align: center;
+        } 
+        .research-box h1 {
+         font-size: 32px;
+         color:whitesmoke;
+         margin-bottom: 10px;
+       }
+
+        .research-box p {
+         font-size: 25px;
+         color: whitesmoke;
+        }
+        .research-comparison p{
+         padding-left: 150px;
+         padding-right: 150px;
+         font-size: 18px;
+         margin-top: 5px;
+        }
+        .research-focus {
+        text-align: center; 
+         margin-bottom: 20px;
+        }
+        .cards-container {
+        display: flex;            
+        justify-content: space-between; 
+        gap: 15px;                 
+        padding: 20px;
+        }
+        .card {
+         background-color:black;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         text-align: center;
+         width: 28%; 
+         min-width: 250px; 
+        }
+        .card p{
+        color:white;
+        }
+
+        
+        .research-focus h2 {
+         text-align: center;          
+         width: 100%;                   
+         margin-bottom: 5px;       
+         font-size: 28px;
+         font-weight: bold;
+        }
+        .research-focus p{
+         font-size: 20px;
+         }
+         .Images {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px 10px;
+        }
+        .ReferenceImage {
+         width: 40%;
+         height: 40%;
+         border: 2px solid gray;
+
+        }
+        .websiteImage {
+         width: 40%;
+         height: 40%;
+        border: 2px solid lightgrey;
+        }
+        .ComparisonTable {
+         width: 80%;
+        border-collapse: collapse; /* Ensure borders collapse into a single line */
+        table-layout: fixed; /* Ensures columns have equal width */
+        margin: auto;
+       }
+       th, td {
+       border: 3px solid black; /* Border around all cells */
+       padding: 12px;
+       text-align: center; /* Aligns text in the center */
+       vertical-align: middle; /* Ensures vertical alignment in the middle */
+       font-size: 20px;
+       }
+       th {
+       background-color: white; /* Dark background for header */
+       color: black; /* White text for header */
+       font-weight: bold; /* Makes header text bold */
+      }
+      tr {
+       background-color: white; /* White background for rows */
+      }
+      .comparison-box{
+      font-weight: bold;
+      font-size: 18px;
+      width: 60%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      background-color: whitesmoke;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+      }
+      .research-comparison h3{
+        padding-left: 150px; 
+        padding-right: 150px;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .research-comparison h4{
+        padding-left: 150px; 
+        padding-right: 150px;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .research-comparison h5{
+        padding-left: 150px; 
+        padding-right: 150px;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .research-comparison h6{
+        padding-left: 150px; 
+        padding-right: 150px;
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }  
+     </style>
+     <!-- Internal CSS ends -->
+
+     <body class="blogpage">
+      <!-- Research Section -->
+<div class="research-box">
+    <h1>RESEARCH SECTION</h1>
+    <p>COMPARISON OF ETERNAL TICKS WITH REFERENCED WEBSITES</p>
+  </div>
+
+ <div class="research-text" >
+   <P style="color: black; text-align: center;font-size: 20px; padding-left: 50px;padding-right: 50px;">
+    Welcome to the Research Section of our Web Page. Here, we share the research behind our study, exploring important insights, methods and findings. This research is intended to offer a clear understanding of the topic, supporting the goals and outcomes of the study.
+ </P>
+ </div>
+
+ <div class="research-focus">
+    <h2>FOCUS OF OUR RESEARCH</h2>
+    <div class="cards-container">
+        <div class="card">
+        <p style="font-weight: bold; "> User Experience</p>
+        <p>
+            Initiating new designs to upgrade reliability and customer satisfaction.
+        </p>
+        </div>
+
+        <div class="card">
+            <p style="font-weight: bold;"> Seamless Navigation</p>
+            <p>
+                Explore the perfect watches effortlessly with our user-friendly interface.
+            </p>
+            </div>
+
+            <div class="card">
+                <p style="font-weight: bold;"> Fast and Secure Shopping</p>
+                <p>
+                    Shop with complete confidence through a secure and streamlined process.
+                </p>
+             </div>
+ </div>
+ </div>
+
+<!-- Comparison of Home Page -->
+   <div class="research-comparison">
+   <h3>HOME PAGE</h3>
+   <p>
+    In this section, we compare the design and features of our home page with other referenced websites. Our goal is to understand how our homepage performs in terms of designs, layouts, user experience and overall effectiveness. With this, we can much clearly identify what works well and what could be improved.
+   </p>
+   <p style="font-weight: bold;font-size: 24px;text-align: center;text-decoration: underline;">Comparison of Home page</p>
+   <div class="Images">
+    <div class="ReferenceImage">
+        <a href="https://webdesignmastery.github.io/FurniShop_29-06-24/" target="_blank"><img src="/Development/img/RefImage1.jpeg"
+                alt="A Reference Image for Home Page from website named furnishop"></a>
+    </div>
+
+    <div class="websiteImage">
+        <img src="/Development/img/RefImage2.jpeg" alt=" Screenshot of Home page of our website">
+    </div>
+</div>
+  <div class="comparison-box">
+     The concept of our homepage was inspired by the website above and the screenshot of the researched material is placed above as well. From the website, we took an idea of the layout of the homepage to make our home page look attractive.
+      We also took help from W3 school for certain level of understanding of hover effects on texts and images so that the main page of the website serves as first point of content for visitors
+     This comparison analyzes the similarities and differences between the home page of Eternal Ticks and reference websites in key areas such as design, navigation and user engagement features.
+</div>
+<!-- Table tag  -->
+<table class="ComparisonTable">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Similarities</th>
+        <th>Differences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Layout and Structure</td>
+        <td>Both websites follows structured layout featuring images and texts.</td>
+        <td>Eternal Ticks focus on dark and bold designs while the referenced website has a light minimalist layout.</td>
+      </tr>
+      <tr>
+        <td>Navigation</td>
+        <td>Both websites provide navigation bars for browsing.</td>
+        <td>Eternal Ticks offers a smooth nav bar, while other website has too basic nav bar.</td>
+      </tr>
+      <tr>
+        <td>Product Display and Focus</td>
+        <td>Both websites includes section for featured products.</td>
+        <td>Eternal Ticks features a large showcase banner with high quality image for featured products with darker tone whereas the referenced website focuses on brighter tone.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="Analysis">
+  <p style="font-weight: bold;font-size: 24px;text-decoration: underline; margin-top: 30px;"> Unique Features Of Our Home Page </p>
+  <ul style="font-size: 20px; margin-left: 150px;">
+  <li>Date and time are also included in header </li>
+  <li>Dedicated section for Watch Offers</li>
+  <li>Luxury Branding</li>
+  </ul>
+  </div>
+   
+  <!-- Comparison of Product Page  -->
+  <h4>PRODUCT PAGE</h4>
+   <p>
+    In this section, we compare the design and features of our product page with other referenced websites. Our goal is to understand how our product page performs in terms of designs, layouts, user interactivity and product display and Descriptions. With this, we can much clearly identify what works well.
+   </p>
+   <p style="font-weight: bold;font-size: 24px;text-align: center;text-decoration: underline;">Comparison of Product page</p>
+   <div class="Images">
+    <div class="ReferenceImage">
+        <a href="https://www.melbournewatch.com.au/pages/all-watches" target="_blank"><img src="/Development/img/RefImage3.jpeg"
+                alt="A Reference Image for Product Page from website named melbourne watch"></a>
+    </div>
+
+    <div class="websiteImage">
+        <img src="/Development/img/RefImage4.jpeg" alt=" Screenshot of Product page of our website">
+    </div>
+</div>
+<div class="comparison-box">
+  The idea for product page was taken from the above website and the screenshot of the website we have researched is provided as well. We took concept of placing products in such row from the website above.
+  We also took the concepts for placing search bar and some product detailsfrom there to make our product page look even more catchy for the purpose of engaging customers and driving sales.
+  This comparison analyzes the similarities and differences between the product page of Eternal Ticks and reference websites in key areas such as design, navigation and user engagement features.
+ </div>
+<table class="ComparisonTable">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Similarities</th>
+        <th>Differences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Product Display</td>
+        <td>Both websites display luxury and elegant watches.</td>
+        <td>Eternal Ticks showcases watches with different modals whereas In referenced website, there is no showcase of watches with modals.</td>
+      </tr>
+      <tr>
+        <td>Price Range</td>
+        <td>Both websites displays the prices of watches.</td>
+        <td>Eternal Ticks has also Offered the discounted price while the other website has not</td>
+      </tr>
+      <tr>
+        <td>Add to Cart Button and Descriptions</td>
+        <td>Both websites includes add to cart button and description of watches.</td>
+        <td>Eternal Ticks also has the description button which will showcase the description of watch when the button is clicked.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="Analysis">
+    <p style="font-weight: bold;font-size: 24px;text-decoration: underline; margin-top: 30px;"> Unique Features Of Our Product Page </p>
+    <ul style="font-size: 20px; margin-left: 150px;">
+    <li>Additional Informations such as discounts and ratings</li>
+    <li>Varied Background of images for luxury feel</li>
+    <li>Add to Cart and description button for more interactivity</li>
+    </ul>
+    </div>
+
+  <!-- Comparison of Blog Page -->
+  <h5>BlOG  PAGE</h5>
+   <p>
+    In this section, we compare the design,features and layout of our blog page with other referenced websites. Our goal is to understand how our Blog page performs in terms of designs, layouts and overall content structure. With this, we can clearly identify what suits well for blog page.
+   </p>
+   <p style="font-weight: bold;font-size: 24px;text-align: center;text-decoration: underline;">Comparison of Blog Page</p>
+  
+   <div class="Images">
+    <div class="ReferenceImage">
+        <a href="https://www.gurkhawatch.com/category/blogs/" target="_blank"><img src="/Development/img/RefImage5.png"
+                alt="A Reference Image for Blog Page from website named Gurkha Watch"></a>
+    </div>
+
+    <div class="websiteImage">
+        <img src="/Development/img/RefImage6.png" alt=" Screenshot of Blog page of our website">
+    </div>
+</div>
+ <div class="comparison-box">
+    The concept for our blog page was inspired by the above website and the screenshot of the website we were inspired from is provided as well. We took idea of placing the title,placing images and also some ideas regarding the layout of the blog page from there. We also took help from W3 school and youtube for effective application of hover effect to make blog page attractive with the aim of engaging readers and encouraging them to explore more content.
+    This comparison analyzes the similarities and differences between the blog page of Eternal Ticks and reference websites in key areas such as placing title, images and user clean layout.
+   </div>
+<table class="ComparisonTable">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Similarities</th>
+        <th>Differences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Blog Format</td>
+        <td> Both websites uses a blog layout with title at top.</td>
+        <td> Eternal Ticks focuses of placing "BLOG" inside black bar with equal spacing whereas In the referenced website, "BLOG" is on background without separating bar.</td>
+      </tr>
+      <tr>
+        <td>Design and Theme</td>
+        <td>Both website uses dark theme with white text.</td>
+        <td>Eternal ticks has more luxury-oriented design while the referenced website has simpler layout. </td>
+      </tr>
+      <tr>
+        <td>Blog Features and Content Structure</td>
+        <td>Both websites includes title, image and description text and similar padding in the description text.</td>
+        <td>Eternal ticks focuses on a smooth and  luxurious flow on content structure and blog features whereas the reference website focuses on straightforward layout.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="Analysis">
+    <p style="font-weight: bold;font-size: 24px;text-decoration: underline; margin-top: 30px;"> Unique Features Of Our Blog Page </p>
+    <ul style="font-size: 20px; margin-left: 150px;">
+    <li>Our Blog Page focuses on a smooth flow on content structure so that it gets easy for viewers to easily understand the contents. </li>
+    <li>The text is centered with required space around it which gives the page a clean layout</li>
+    <li>Hover effect on images with high quality images of watches that enhances luxurious appeal. </li>
+    </ul>
+    </div>
+
+<!-- Comparison of Portfolio -->
+  <h6>PORTFOLIO</h6>
+   <p>
+    In this section, we compare the design and features of our portfolio with other referenced websites. Our goal is to understand how our portfolio performs in terms of designs and management of CV of our team members.. With this, we can much clearly identify what works well for our portfolio.
+   </p>
+   <p style="font-weight: bold;font-size: 24px;text-align: center;text-decoration: underline;">Comparison of Portfolio</p>
+   
+   <div class="Images">
+    <div class="ReferenceImage">
+        <a href="https://www.slidegeeks.com/business-team-four-introduction-tags-powerpoint-slides" target="_blank"><img src="/Development/img/RefImage7.jpeg" 
+                alt="A Reference Image for portfolio from website "></a>
+    </div>
+
+    <div class="websiteImage">
+        <img src="/Development/img/RefImage8.jpeg" alt=" Screenshot of Portfolio of our website">
+    </div>
+</div>
+<div class="comparison-box">
+  The idea for our portfolio from our about us page was taken from the website mentioned above and the screenshot of researched image is also presented. From this website, we took the idea of placing portfolio of our team members in a more visible way. 
+  We also took help from w3 school to manage the portfolio so that anyone viewing our website will easily get to know about our team members which helps in establishing trust and credibility. This comparison analyzes the similarities and differences between the Portfolio of Eternal Ticks and reference websites in key areas such as design, informations to include and user engagement features.
+ </div>
+<table class="ComparisonTable">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Similarities</th>
+        <th>Differences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Project section</td>
+        <td>Both portfolios show projects with images and their description.</td>
+        <td>Our portfolio includes interactive elements like hover effects and image of each member with brief description. </td>
+      </tr>
+      <tr>
+        <td>Introduction/bio </td>
+        <td>Both portfolios provides a brief introduction like personal information and other key-points.</td>
+        <td>Our portfolio highlights  elements like personal information, educational background, work experience, skills and language known.</td>
+      </tr>
+      <tr>
+        <td>CV Showcase </td>
+        <td>Both portfolios displays a direct link to see profile. </td>
+        <td>Our portfolio provides interactive hover effect which on clicking direct to view each member profile.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="Analysis">
+    <p style="font-weight: bold;font-size: 24px;text-decoration: underline; margin-top: 30px;"> Unique Features Of Our Portfolio </p>
+    <ul style="font-size: 20px; margin-left: 150px;">
+    <li>A brief introduction of each of our team members. </li>
+    <li> Hover effect on "Read More".</li>
+    <li> Clean and simple portfolio.</li>
+    </ul>
+    </div>
+
+  <!-- Comparison of Feedback Form -->
+  <p style=" padding-left: 150px; padding-right: 150px;font-weight: bold; font-size: 25px;">FEEDBACK FORm</p>
+  <p>
+   In this section, we compare the design and features of our feedback form  with other referenced websites. Our goal is to understand how our feedback form performs in terms of easyness and interactive features. With this, we can much clearly identify how to improve our feedback form.
+  </p>
+  <p style="font-weight: bold;font-size: 24px;text-align: center;text-decoration: underline;">Comparison of Feedback Form</p>
+  <div class="Images">
+   <div class="ReferenceImage">
+       <a href="https://www.uxdt.nic.in/documents/website-ui/feedback-form-template-1/" target="_blank"><img src="/Development/img/RefImage9.jpeg"
+               alt="A Reference Image for Feedback Form from website "></a>
+   </div>
+
+   <div class="websiteImage">
+       <img src="/Development/img/RefImage10.jpeg" alt=" Screenshot of Feedback Form of our website">
+   </div>
+</div>
+<div class="comparison-box">
+  The idea of our Feedback form was extracted from the website above and the screenshot of researched image is also placed above. We took the idea of layout of our form that help to easily collect responses from consumers and to know about their feedbacks.
+   This comparison analyzes the similarities and differences between the Feedback Form of Eternal Ticks and reference websites in key areas such as engaging and interactive features.
+ </div>
+
+<table class="ComparisonTable">
+   <thead>
+     <tr>
+       <th>Aspect</th>
+       <th>Similarities</th>
+       <th>Differences</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>Fields</td>
+       <td> All forms have fields like name, email, and messages.</td>
+       <td>Our form have an additional phone number with placeholder of each fields.</td>
+     </tr>
+     <tr>
+       <td>Submit button</td>
+       <td>All forms have submit button to be send by the user for their feedback. </td>
+       <td> Our “Submit” button changes color when cursor is move to it. </td>
+     </tr>
+     <tr>
+       <td>Alert message</td>
+       <td>All forms show errors when user misses out input fields or is entered improperly.</td>
+       <td>Our form show alert message when user misses any fields, if phone number id entered not correctly , also if “@ ” is missing in the email.</td>
+     </tr>
+   </tbody>
+ </table>
+ <div class="Analysis">
+  <p style="font-weight: bold;font-size: 24px;text-decoration: underline; margin-top: 30px;"> Unique Features Of Our Feedback Form </p>
+  <ul style="font-size: 20px; margin-left: 150px;">
+  <li> ●Hover effect on “Submit” button </li>
+  <li>●Alert messages if user misses out  any fields </li>
+  <li>●User friendly form layout </li>
+  </ul>
+  </div>
+</div>
+</body>
+    
+<!--footerr-->
+
+     <footer class="footer" id="contact">
+        <div class="section_holder footer_holder">
+            <div class="fcol">
+                <div class="flogo">
+                    <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="10%" width="10%" alt="logo">
+                    <a href="#" class="logo">ETERNAL_TICKS</a>
+                </div>
+                <p>
+                    Jyatha, Kathmandu
+                </p>
+                <p>
+                    +977 9803611011
+                </p>
+                <!--social icons-->
+                <ul class="socials_">
+                    <li>
+                        <a href="#"><img src="/Development/img/facebook-new.png" height="30px" width="30px" alt="fbicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/instagram.png" height="30px" width="30px" alt="instaicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/pinterest-icon-2048x2048-2otqcxep.png" height="30px" width="30px" alt="pinteresticon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/tt.png" height="30px" width="30px" alt="tiktokicon"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Services</h4>
+                <!--footerlinks-->
+                <ul class="flinks">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Payrol</a></li>
+                    
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Resources</h4>
+                <ul class="flinks">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQS</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                    
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Support</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Feedback</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Feedback form</a></li>
+                    <li><a href="#">Feedback policy</a></li>
+    
+                </ul>
+            </div>
+        </div>
+        <div class="footerbar_">
+            ETERNAL_TICKS//Watches That Define Your Style.
+        </div>
+     </footer>
+     <script>
+
+        function updateClock() {
+            const now = new Date();
+            
+            // Get time in 12-hour format
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // Convert hours to 12-hour format
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Ensure 12-hour format
+        
+            // Update time
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${period}`;
+        
+            // Update date
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Run updateClock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on page load
+        
+    </script>
+     
+    </body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Watch-store">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Prajesh Sama Shrestha">
+    <!--link to external css stylesheet-->
+    <link rel="stylesheet" href="/Development/css/style.css">
+    <!--Title of the webpage-->
+    <title>WATCH STORE | ETERNAL_TICKS</title>
+</head>
+    <body>
+        <!--logo-->
+    <nav>
+        <div class="headerrr">
+            <div class="mylogo">
+                <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="40%" width="40%" alt="logo">
+                <a href="#" class="logo">ETERNAL_TICKS</a>
+            </div>
+           
+        </div>  
+       <!--navbar contains the items where users can navigate to other part of the websites-->
+        <ul class="links_nav" id="nav-links">
+            <li class="link"><a href="">Home</a></li>
+            <li class="link"><a href="/Development/pages/product.html">Product</a></li>                   
+            <li class="link"><a href="/Development/pages/blog.html">Blog</a></li>           
+            <li class="link"><a href="/Development/pages/research.html">Research</a></li>                     
+            <li  class="link" ><a href="/Development/pages/aboutus.html">About Us</a></li>
+         
+        </ul>
+         <!--time-->    
+        <!--time and date-->
+        <div id="clock" class="clock"></div> <!-- Clock added here -->
+        <div id="date" class="clock"></div> <!-- Date added here-->     
+       
+        
+        <!--body-->
+    </nav>
+
+    <body>
+        <!--Internal CSS-->
+        <style>
+            .price-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .original-price {
+                text-decoration: line-through;
+                color: #888;
+            }
+    
+            .discounted-price {
+                color: #141414;
+                font-weight: bold;
+            }
+    
+            .popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid #ccc;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                text-align: center;
+                color: rgb(14, 13, 13);
+            }
+    
+            .popup p {
+                margin-bottom: 20px;
+            }
+    
+            .popup button {
+                background-color: #f29136;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .popupsubmit {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                background-color: rgb(255, 255, 255);
+                border: 4px solid #cccccc;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                text-align: center;
+                color: rgb(24, 23, 23);
+            }
+    
+            .popupsubmit p {
+                margin-bottom: 20px;
+            }
+    
+            .popupsubmit button {
+                background-color: #f29136;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    
+        <!--Internal Script-->
+        <script>
+            function addtocart() {
+                const cartButton = document.querySelector('.addtocart');
+                const popup = document.getElementById('popup');
+    
+                popup.style.display = 'block';
+            }
+            function closePopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+        </script>
+        <!--External JavaScript-->
+        <script src="/Development/js/script.js"></script>
+        <!--products dteails section-->
+        <div class="pro-detail-container">
+            <div class="pro-details-row">
+                <!--product image-->
+                <img src="/Development/img/5.jpg" alt="watch5" class="pro-image">
+                <div class="pro-text-details">
+                    <!--product title-->
+                    <h2 class="pro-title">Cartier Tank Louis</h2>
+                    <!--product price-->
+                    <div class="price-container">
+                        <p class="pro-price">Price:</p>
+                        <p class="price">$10,500</p>
+                    </div>
+                    <!--product quantity-->
+                    <div class="quantity">
+                        <p>
+                            <label class="quantity">Qty:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1">
+                        </p>
+                    </div>
+                    <!--product description-->
+                    <h2 class="pro-title">Description:</h2>
+                    <p>The Cartier Tank Louis Cartier watch range was released in 1922 and
+                        features a brown leather strap that seamlessly integrates into the
+                        sidebars of the 18ct gold case.Cartier Tank Louis is known for
+                        exquisite craftsmanship and timeless designs, Cartier watches
+                        have become iconic symbols of style and sophistication.</p>
+                    <h2 class="pro-title">Basic Info:</h2>
+                        <p>Dimensions: 29.5 mm x 22.0 mm<br>
+                            Material: Rose gold<br>
+                            Water Resistance up to 3 bar (~30 meters)<br>
+                            Glass: Square-shaped glass<br>
+                            Case-Back Material: Gold<br>
+                            Case Thickness: 6.62 mm</p>
+                        <!--product rating-->
+                        <p>Rating: 4.5/5</p>
+                        <!--Button of add to cart -->
+                        <div>
+                            <button class="addtocart" onclick="addtocart()">Add to Cart</button>
+                            <button class="buynow" onclick="buynow()">Buy Now</button>
+                        </div>
+                        <!--Popup for successfull add to cart-->
+                        <div class="popup" id="popup">
+                            <p>Successfully added to cart!</p>
+                            <button onclick="closePopup()">Close</button>
+                        </div>
+                         <!--Review Section-->
+                         <div class="review">
+                            <p>
+                                <label for="reviewform">Review</label>
+                                <textarea id="review" name="review" required></textarea>
+                                <button class="submit" onclick="submitreview()">Submit Review</button>
+                            </p>
+                        </div>
+                        <!--Popup for succesfully submitted review-->
+                        <div id="popupsubmit" class="popupsubmit">
+                            <p>Review submitted successfully!</p>
+                            <button onclick="closePopupsubmit()">Close</button>
+                        </div>
+                </div>
+            </div>
+            <button>
+                <a href="/Development/pages/product.html" class="back-link">Back to Products</a>
+            </button>
+        </div>
+    </body>
+    
+
+    
+    
+<!--footerr-->
+
+     <footer class="footer" id="contact">
+        <div class="section_holder footer_holder">
+            <div class="fcol">
+                <div class="flogo">
+                    <img src="/Development/img/2F010198-5DEA-49E0-A56C-2892026A6852.png" height="10%" width="10%" alt="logo">
+                    <a href="#" class="logo">ETERNAL_TICKS</a>
+                </div>
+                <p>
+                    Jyatha, Kathmandu
+                </p>
+                <p>
+                    +977 9803611011
+                </p>
+                <!--social icons-->
+                <ul class="socials_">
+                    <li>
+                        <a href="#"><img src="/Development/img/facebook-new.png" height="30px" width="30px" alt="fbicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/instagram.png" height="30px" width="30px" alt="instaicon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/pinterest-icon-2048x2048-2otqcxep.png" height="30px" width="30px" alt="pinteresticon"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/Development/img/tt.png" height="30px" width="30px" alt="tiktokicon"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Services</h4>
+                <!--footerlinks-->
+                <ul class="flinks">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Payrol</a></li>
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Resources</h4>
+                <ul class="flinks">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQS</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                   
+                </ul>
+            </div>
+            <div class="fcol">
+                <h4>Support</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    
+            </div>
+            <div class="fcol">
+                <h4>Feedback</h4>
+                <ul class="flinks">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Feedback form</a></li>
+                    <li><a href="#">Feedback policy</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="footerbar_">
+            ETERNAL_TICKS//Watches That Define Your Style.
+        </div>
+     </footer>
+     <script>
+
+        function updateClock() {
+            const now = new Date();
+            
+            // Get time in 12-hour format
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // Convert hours to 12-hour format
+            const period = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; // Ensure 12-hour format
+        
+            // Update time
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${period}`;
+        
+            // Update date
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Run updateClock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately on page load
+        
+    </script>
+     
+    </body>
+</html>

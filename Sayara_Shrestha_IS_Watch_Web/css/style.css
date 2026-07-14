@@ -1,0 +1,1437 @@
+/*collecting all variables in a place for easy maintainance*/
+:root{ 
+    --primary-color:#000000;
+    --text-dark:#171717;
+    --text-light:@737373;
+    --extra-light:#f4f6f5;                                              
+    --white:#ffffff;
+    --max-width:1200px;
+    --header-font: Arial(sans-serif);
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;    /*allows us to include the padding and border in an element's total width and height*/
+}
+/*for date and time*/
+.clock {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 20px;
+}
+.watchcover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.watch {
+    position: relative;
+    overflow: hidden;
+    width: 300px; /* Fixed width for the watch */
+    height: 400px; /* Fixed height for the watch */
+    margin: 20px; /* Add space around the watch */
+    margin-bottom: 80px;
+}
+
+
+.watchimg {
+    width: 100%;
+    height: 100%; /* Ensure image takes full container size */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire watch */
+    transition: transform 0.3s ease;
+    margin: 10px; /* Add margin inside the watch around the image */
+}
+
+
+.intro {
+    bottom : 0;
+    left: 0;
+    right: 0;
+    position: absolute; /* allows elements to be positioned based on an absolute point on the page, relative to its parent element*/
+    background: rgb(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%); /*move an element horizontally and vertically by a specified percentage of its own size*/
+    transition: transform 0.3s ease;
+}
+
+
+.watch:hover .watchimg {
+    transform: scale(1.1); /* Image zoom effect */
+}
+
+
+.watch:hover .intro {
+    transform: translateY(0); /* Text slides up */
+}
+
+
+
+.links_nav a{
+    text-decoration: none; /*no underline*/
+    font-size: large;
+}
+.link{
+    font-weight: 1000px;
+}
+
+
+.section_holder {
+    max-width: 1200px; /*sets the maximum width of an element*/
+    margin: auto auto 0px auto;
+    padding: 25px 16px 16px 16px;
+
+
+}
+.section__header {
+    margin-bottom: 16px;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: black;
+}
+.section__description {
+    font-size: 19px;
+    color: var(--text-light);
+}
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+img {
+    display: flex;
+    transition: 0.3s;
+}
+
+
+ul {
+    list-style: none; /*remove the markers/bullets*/
+   
+}
+
+.m-auto{
+    color: #0a0a0a;
+    margin-top: 200px;
+    background-color: #ffffff;
+}
+
+.m-auto h1{
+    font-size: 35px;
+    margin-left: 40%;
+    font-weight: 600;
+}
+
+
+.m-auto p{
+    font-size: 18px;
+    text-align: center;
+}
+
+html,
+body {
+    scroll-behavior: smooth; /*make the page scroll smoothly*/
+
+
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+nav {
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    z-index: 9;
+   
+}
+
+
+.headerrr {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+
+
+}
+
+
+.mylogo .logo {
+    color: white;
+}
+
+
+
+
+.links_nav{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;;
+    padding: 32px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    background-color: black;
+    transition: .5s;
+    z-index: -1;
+   
+    /* transform: translateY(-100%); */
+}
+
+#current-time{
+    font-size: 25px;
+    color: #f80606;
+}
+.links_nav.open{
+    transform: translateY(0);
+}
+
+
+.links_nav a {
+    font-weight: bolder;
+    color: white;
+    overflow: hidden;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.links_nav a:hover 
+{
+    text-decoration: underline;
+}
+.links_nav a:active{
+    color: red;
+}
+
+
+.header_holder{
+    display: grid;
+    overflow: hidden;
+}
+
+
+.header_img{
+    grid-area: 1/1/1/1;
+}
+ .header_img img {
+    max-width: 1000px;
+    margin-left: auto;
+ }
+
+
+ .head_content {
+    grid-area: 1/1/2/2;
+    display: grid;
+    align-items: center;
+ }
+
+
+ .head_content > div {
+    max-width: 500px;
+    padding: 80px 16px;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+ }
+ 
+
+
+ .head_content h1 {
+    margin-bottom: 16px;
+    font-size: 64px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--primary-color);
+ }
+
+
+ .head_content p{
+    font-size: 19px;
+    color: var(--text-light);
+ }
+ /*deals*/
+ .deals_holder{
+    display: grid;
+    gap: 32px;
+    padding-bottom: 6 0px;
+
+
+ }
+
+ .d_card span{
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 32px;
+
+
+ }
+ .d_card h4{
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text-dark);
+ }
+ .d_card p{
+    color: var(--text-light);
+ }
+ 
+/*product display*/
+h1{
+    font-size: 50px;
+    line-height: 64px;
+}
+h4{
+    font-size: 20px;
+}
+p{
+    font-size: 20px;
+}
+.main{
+    height: 550px;
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    background-size: cover;
+    align-items: flex-start;
+}
+
+.main .Offers{
+     position: absolute;
+     bottom: 10%;
+     right: 0;
+     width: 40%;
+     padding: 50px;
+     color: rgb(234, 228, 228);
+     margin-bottom: 50px;
+     margin-right: 70
+}
+.main .Offers button{
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.main .Offers button:hover{
+    background-color: rgb(255, 149, 43);
+}
+.row-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.box {
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    border: 0px #000;
+    background-color: #fcfbfb;
+    text-align: center;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  
+}
+.box img{
+    width: 100%;
+    height: 100%;
+}
+.box text{
+    position: relative;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*about us*/
+ .one {
+    padding: 20px;
+    background-color: #fffdfd;
+    margin-top: 0px;
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+   
+}
+.one h2{
+    font-size: 28px;
+}
+
+.one h2:hover{
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    transition: .5S;
+}
+
+.two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.three {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.three a{
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.three a:hover{
+    font-size: 22px;
+    background-color: rgb(9, 9, 9);
+    display: block;
+    transition: .3s;
+    color: white;
+}
+
+
+.three img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+
+.three h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.three p {
+    color: #555;
+}
+
+ .offer{
+    background: rgb(21, 21, 21);
+    margin-top: 30px;
+    padding: 15px 200px;
+    color: white;
+    margin-top: 30px;
+    text-align: left;
+
+ }
+
+ .col-2 .offer-img{
+    padding: 45px;
+    float: left;
+    overflow: hidden;
+ }
+ .col-2 .offer-img{
+
+    transition: transform 0.3s ease;
+ }
+.col-2 .offer-img:hover{
+    transform: scale(1.2);
+} 
+.col-2 a{
+    font-size: 20px;
+    color: white;
+    
+}
+.col-2 a:hover{
+    opacity: .5;
+    
+}
+ small{
+    color: rgb(177, 187, 195);
+ }
+
+/*css for  section in home page*/
+#blog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.blog-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+.blog-heading span{
+    color: #312e2e;
+}
+.blog-heading h3{
+    font-size: 32px;
+    color: #000000;
+    font-weight: 650;
+}
+
+.blog_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+.blog-box{
+    width: 350px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    margin: 20px;
+}
+.blog-img{
+    width: 100%;
+    height: auto;
+}
+.blog-img img{
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    object-position: center;
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.blog-title{
+    font-size: 25px;
+    font-weight: 550;
+    color: #3d3954;
+    text-decoration: none;
+
+}
+.blog-title:hover{
+    color: #d72727;
+    transition: all ease 0.3s;
+}
+.blog-text p{
+    color: #333;
+    font-size: 17px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+.blog-text a{
+    color: #000000;
+    font-size: 20px;
+}
+.blog-text a:hover{
+    color: red;
+    transition: all ease 0.3s;
+    
+}
+/*footer section starts here*/
+ .footer {
+    background-color: black;
+ }
+
+
+ .footer_holder {
+    display: flex;
+    gap: 4px 2px;
+ }
+ .flogo .logo {
+    color: white;
+
+
+ }
+ .flogo .logo:hover{
+    opacity: .5;
+ }
+ .fcol p{
+    margin-bottom: 2px;
+    color: var(--extra-light);
+    opacity: 0.8;
+ }
+
+
+ .socials_ {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+   
+ }
+
+
+ .socials_ a {
+    font-size: 30px;
+    color: var(--white);
+    text-decoration: none;
+
+
+ }
+
+
+ .socials_ a:hover{
+    opacity: 0.5;
+ }
+ .fcol h4 {
+    margin-bottom: 1px;
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--white);
+   
+ }
+.flinks {
+    display: grid;
+    gap: 20px;
+   
+}
+.flinks a {
+    color: var(--extra-light);
+    opacity: 0.8;
+    text-decoration: none;
+   
+}
+
+
+.flinks a:hover {
+    opacity: 1;
+}
+.footerbar_ {
+    padding: 16px;
+    font-size: 14px;
+    color: var(--extra-light);
+    opacity: 0.8;
+    text-align: center;
+   
+   
+}
+
+
+.deals_holder{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+nav{
+    position: static;
+    padding: 32px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+
+.headerrr {
+flex: 1;
+padding: 0;
+background-color: transparent;
+}
+
+
+
+.mylogo .logo{
+color: var(--primary-color);
+}
+
+
+.links_nav {
+position: static;
+padding: 0;
+width: fit-content;
+flex-direction: row;
+gap: 48px;
+background-color: transparent;
+transform: none;
+}
+
+.links_nav a {
+color: black;
+
+
+}
+
+.links_nav a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+/* Underline expands when the user hovers */
+.links_nav a:hover::after {
+    width: 100%;
+}
+/* Keeping the underline red when the link is clicked (active state) */
+.links_nav a:active::after,
+.links_nav a:visited::after {
+    width: 100%;
+    background: red;
+}
+
+.header_holder{
+padding-top: 0 ;
+}
+
+
+.deals_holder{
+grid-template-columns: repeat(3, 1fr);
+
+
+}
+
+
+.d_card:nth-child(1) {
+grid-column: 1/4;
+}
+.footer_holder{
+flex-direction: row;  /*arranges flex items horizontally.*/
+gap: 100px;
+
+}
+.deals_holder{
+    grid-template-columns: repeat(4, 1fr);
+}
+.d_card:nth-child(1){
+    grid-column: unset;
+}
+
+
+/*about us page css by danish*/
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin: 0;
+    padding: 10px 0;
+    color: #080808;
+ 
+
+}
+.content p {
+    color: #090909;
+}
+/* about our team */
+ .page-header {
+
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.page-header h1 {
+    color: #333;
+}
+
+.page-header p {
+    color: #777;
+}
+
+.one {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    text-align: center;
+    color: #000000;
+   
+}
+
+.two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.three {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.three a{
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.three a:hover{
+    font-size: 22px;
+    background-color: rgb(9, 9, 9);
+    display: block;
+    transition: .3s;
+    color: white;
+}
+
+
+.three img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.three h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.three p {
+  color:#555;
+}
+
+
+
+.three h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.three p {
+    color: #555;
+}
+
+/* Contact Form */
+.contactForm{
+
+    padding: 20px;
+    text-align: center;
+ 
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+.feedback-text {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #050505;
+    border-radius: 5px;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #918a7e;
+}
+
+
+/* about our shop */
+.content{
+    flex: 1;
+}
+.content h2{
+    line-height: 1.6;
+    text-align: center;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #333;
+	padding-bottom: 10px;
+}
+
+.logo-section{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: inline;
+
+}
+.logo{
+    width: 150px ;
+    height: auto;
+    margin-bottom: 10px;
+}
+/* External CSS For Blog Starts */
+/* Styling for Blog Container */
+.blog-container {
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.blog {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding-left: 150px;
+    padding-right: 150px;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+/* Styling for tech starts */
+.tech-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+.tech-box {
+    flex: 1;                      
+    width: 100%;                        /* This ensures it takes up full width inside its container */
+    max-width: 600px;                   /* Max width to prevent it from growing too large */
+    border: 1px solid #ccc;             /* Light border */
+    border-radius: 8px;                 /* Rounded corners */
+    background-color: white;            /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition on hover */
+    text-align: center;                 /* Center content */
+    position: relative;                 /* Ensure proper positioning */
+    padding: 20px;                      /* Add padding inside the box */
+}
+.tech-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.topic, .details {
+    font-size: 16px;
+    color: #333;
+}
+.details {
+    display: none;
+}
+/* Styling for tech ends */
+
+/* Box Styling  starts*/
+.boxcover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.box {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+}
+.boximg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+.intro {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.box:hover .boximg {
+    transform: scale(1.1);
+}
+.box:hover .intro {
+    transform: translateY(0);
+}
+/* Box styling ends */
+
+
+/* Interactive Content Toggles starts */
+/* Interactive Content Toggles of ch1 */
+#ch1{
+    display: none;
+}
+#ch1:checked ~ .content{
+    display: block;
+}
+#ch1:checked ~ label {
+    display: none;
+}
+
+/* Interactive Content Toggles of ch2 */
+#ch2 {
+    display: none;
+}
+#ch2:checked ~ .content {
+    display: block;
+}
+#ch2:checked ~ label {
+    display: none;
+}
+.content {
+    display: none;
+}
+label {
+    font-size: 24px;
+    display: inline-block;
+    cursor: pointer;
+}
+/* Interactive Content Toggles ends */
+
+/* Styling for the Conclusion starts*/
+.Conclusion {
+    max-width: 1070px;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Conclusion h6 {
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.Conclusion p {
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: justify;
+    color: #ffffff;
+}
+/* Styling for the Conclusion ends */
+/* External CSS For Blog Ends */
+
+/* External CSS For Research Starts */
+.ReferenceImage img:hover,
+.websiteImage img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* External CSS For Research ends */
+
+/*product page css*/
+/*Product page css*/
+
+
+h2 .pro-title{
+    font-size: 46px;
+    line-height: 54px;
+    font-style: italic;
+}
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0 20px;
+    font-style: initial;
+}
+li {
+    font-size: 20px;
+}
+
+body {
+    width: 100%;
+}
+
+/*search button css*/
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 98%;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f4f2f2;
+    margin-right: 5px;
+    margin-bottom: auto;
+    width: 20%;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #161616;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #f5792c;
+}
+
+/*product images, box css*/
+.pro-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.pro-box {
+    width: 300px;
+    padding: 10px;
+    background-color: #d3d2d2;
+    text-align: center;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pro-box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.pro-box img:hover {
+    transform: scale(1.05);
+}
+
+.pro-details-row img:hover {
+    transform: scale(1.05);
+}
+
+.pro-box button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #111111;
+    background-color: #fffdfa;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pro-box button:hover {
+    background-color: #f89924;
+}
+
+/*buttons css*/
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffa000;
+}
+
+.pro-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+    width: 100%;
+}
+
+.pro-detail-container img {
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.pro-details-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pro-details-row img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    margin-right: 50px;
+}
+
+.pro-title,
+.pro-price,
+.pro-detail-container,
+.pro-review,
+.quantity {
+    margin: 2px 0;
+}
+
+.pro-title {
+    line-height: normal;
+}
+
+/*back to product link css*/
+.back-link {
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+/*review section css*/
+.review-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*css for research and blog page*/
+/* External CSS For Blog Starts */
+/* Styling for Blog Container */
+.blog-container {
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.blog {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding-left: 150px;
+    padding-right: 150px;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+/* Styling for tech starts */
+.tech-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+.tech-box {
+    flex: 1;                      /* Set it to take 50% of the available width */
+    width: 100%;                        /* This ensures it takes up full width inside its container */
+    max-width: 600px;                   /* Max width to prevent it from growing too large */
+    border: 1px solid #ccc;             /* Light border */
+    border-radius: 8px;                 /* Rounded corners */
+    background-color: white;            /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition on hover */
+    text-align: center;                 /* Center content */
+    position: relative;                 /* Ensure proper positioning */
+    padding: 20px;                      /* Add padding inside the box */
+}
+.tech-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.topic, .details {
+    font-size: 16px;
+    color: #333;
+}
+.details {
+    display: none;
+}
+/* Styling for tech ends */
+
+/* Box Styling  starts*/
+.boxcover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.box {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+}
+.boximg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+.intro {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.box:hover .boximg {
+    transform: scale(1.1);
+}
+.box:hover .intro {
+    transform: translateY(0);
+}
+/* Box styling ends */
+
+
+/* Interactive Content Toggles starts */
+/* Interactive Content Toggles of ch1 */
+#ch1{
+    display: none;
+}
+#ch1:checked ~ .content{
+    display: block;
+}
+#ch1:checked ~ label {
+    display: none;
+}
+
+/* Interactive Content Toggles of ch2 */
+#ch2 {
+    display: none;
+}
+#ch2:checked ~ .content {
+    display: block;
+}
+#ch2:checked ~ label {
+    display: none;
+}
+.content {
+    display: none;
+}
+label {
+    font-size: 24px;
+    display: inline-block;
+    cursor: pointer;
+}
+/* Interactive Content Toggles ends */
+
+/* Styling for the Conclusion starts*/
+.Conclusion {
+    max-width: 1070px;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Conclusion h6 {
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.Conclusion p {
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: justify;
+    color: #ffffff;
+}
+/* Styling for the Conclusion ends */
+/* External CSS For Blog Ends */
+
+/* External CSS For Research Starts */
+.ReferenceImage img:hover,
+.websiteImage img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* External CSS For Research ends */
+
+.blogpage img{
+    width: 100%;
+    object-fit: cover;
+  }
